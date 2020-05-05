@@ -35,7 +35,8 @@ To fully experience this project, first you will need to go [here](https://devel
 
 **Test**
 
-npm run test
-![alt text] (https://github.com/egizaw2/evaluate-news-nlp/blob/master/test.png)
+npm run test:
+
+![alt text](https://github.com/egizaw2/evaluate-news-nlp/blob/master/test.png)
 
 
