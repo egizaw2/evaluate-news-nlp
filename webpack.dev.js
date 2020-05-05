@@ -2,22 +2,26 @@ const path = require("path");
 const webpack = require("webpack");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+//const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 
 module.exports = {
-	entry: "./src/client/index.js",
 	mode: "development",
+	entry: "./src/client/index.js",
+	devServer: {
+		port: 3000
+	  },
+	  
 	devtool: "source-map",
 	stats: "verbose",
 	output: {
 		libraryTarget: 'var',
-		library: 'Client'
+		library: 'Client',
 	},
 	module: {
 		rules: [
 			{
-				test: "/.js$/",
+				test: '/.js$/',
 				exclude: /node_modules/,
 				loader: "babel-loader",
 			},
@@ -25,7 +29,7 @@ module.exports = {
 				test: /\.scss$/,
 				use: ['style-loader', 'css-loader', 'sass-loader']
 			}
-		],
+		]
 	},
 	plugins: [
 		new HtmlWebPackPlugin({
@@ -39,8 +43,8 @@ module.exports = {
 			verbose: true,
 			// Automatically remove all unused webpack assets on rebuild
 			cleanStaleWebpackAssets: true,
-			protectWebpackAssets: false,
-		}),
-		new MiniCssExtractPlugin({filename: '[name].css'}),
-	],
+			protectWebpackAssets: false
+		})
+		//new MiniCssExtractPlugin({filename: '[name].css'}),
+	]
 };
