@@ -12,7 +12,7 @@ function handleSubmit(event) {
 	}
 
 console.log("::: Form Submitted :::")
-	fetch('//localhost:8082/analysis', {
+	fetch('http//localhost:{port}/{endpoint}', {
 		method: 'POST',
     headers: {
       'Content-Type': 'application/json'
